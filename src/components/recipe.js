@@ -13,9 +13,9 @@ class Recipe {
     renderRecipe() {
         return `
         <div id="recipe-card">
-        <li>${this.name}</li>
-        <p>${this.ingredients}</p>
-        <p>${this.directions}</p>
+        <h4><u>${this.name}</u></h4>
+        <p><u>Ingredients:</u> ${this.ingredients}</p>
+        <p><u>Directions:</u> ${this.directions}</p>
         <br>
         </div>
         `

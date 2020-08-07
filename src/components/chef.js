@@ -10,11 +10,14 @@ class Chef {
 
         this.main = document.createElement('div')
         this.main.id = `chef-${this.id}`
+        this.main.className = "grid-item"
         this.recipes = document.createElement('div')
         this.recipes.id = `chef-${this.id}-recipes`
+        this.recipes.className = "back-card"
         this.newRecipeButton = document.createElement('button')
         this.newRecipeButton.innerText = `Add Recipe for ${this.name}`
         this.newRecipeButton.id = `chef-${this.id}-new-recipe`
+        this.newRecipeButton.className = "new-recipe-button"
         this.newRecipeButton.addEventListener('click', this.renderNewRecipeForm)
 
         this.recipeForm = document.createElement('form')
@@ -35,10 +38,10 @@ class Chef {
         <input type="text" name="name" id="recipe-name">
         <br/>
         <label>Ingredients:</label>
-        <input type="textarea" name="ingredients" id="recipe-ingredients" >
+        <textarea type="textarea" name="ingredients" id="recipe-ingredients"></textarea>
         <br/>
         <label>Directions:</label>
-        <input type="textarea" name="directions" id="recipe-directions">
+        <textarea type="text" name="directions" id="recipe-directions"></textarea>
         <br/>
         <input id="submit-recipe" type="submit" value="Submit">
         `
@@ -66,11 +69,17 @@ class Chef {
     renderRecipes() {
        this.recipes.innerHTML = this.findRecipes().map(recipe => recipe.renderRecipe()).join("")
        this.main.appendChild(this.recipes)
+       this.recipes.appendChild(this.newRecipeButton)
     }
 
     renderName() {
         this.main.innerHTML = `
+        <div class="front-card">
+        <div class="front">
         <h3>${this.name}</h3>
+        <i class="fas fa-grin fa-3x"></i>
+        </div
+        </div>
         `
     }
 
@@ -81,9 +90,11 @@ class Chef {
             
             chef.renderRecipes()
      
-            Chef.chefContainer.append(chef.main, chef.newRecipeButton)
+            Chef.chefContainer.append(chef.main)
         })
     }
+
+    //, chef.newRecipeButton
 
     static addEventListeners () {
         Chef.newChefForm.addEventListener('submit', Chef.createChef);

@@ -36,14 +36,15 @@ body {
 }
 
 .front-card {
-    background-color: #bbb;
+    background-image: url(http://t3.gstatic.com/images?q=tbn:ANd9GcQKjf8FN_DWIWlMAca3cy8oqoy5AuQwXAgk0afeO7zVkQ0FtZ1TWrCDF45VEE5-EvMvc5o2S3sqQeL7eBb7UR8);
+    background-size: 100%;
     color: black;
     text-align: center;
 }
   
 
 .back-card {
-    background-color: rgb(132, 201, 172);
+    background-color: #fdfde7;
     color: black;
     transform: rotateY(180deg);
     overflow-y: auto;
@@ -55,8 +56,8 @@ body {
     padding-left: 0;
     padding-top: 10px;
     padding-bottom: 10px;
-
-    background-color: #c98383;
+    border-radius: 5px;
+    background-color: #ed1b24;
     text-align: left;
 }
 
@@ -65,12 +66,17 @@ body {
     margin: 8px 10;
 }
 
+#recipe-form {
+    text-align: left important!;
+    display: inline-block important!;
+}
+
 h2 {
     margin-bottom: 0;
 }
 
 input[type=text] {
-    width: 20%;
+    width: 170px;
     padding: 7px 10px;
     box-sizing: border-box;
     border-radius: 4px;
@@ -82,11 +88,27 @@ textarea {
 
 }
 
-button, input[type=submit] {
+input[type=submit] {
     border-radius: 4px;
+    margin-top: 10px;
 }
 
 button {
     margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+.new-recipe-button {
+    margin: 10px;
+}
+
+h2#book-label {
+    background-color: 	#132f76;
+    color: white;
+    font-weight: bold;
+}
+
+i {
+    margin-top: 20px;
 }
 

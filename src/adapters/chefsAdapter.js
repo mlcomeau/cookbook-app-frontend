@@ -2,13 +2,9 @@ class ChefsAdapter {
     static baseURL = "http://localhost:3000/chefs"
 
     static fetchAndMakeChefs(){
-     // debugger;
-      //console.log(fetch(ChefsAdapter.baseURL))
       return fetch(ChefsAdapter.baseURL)
         .then((obj) => obj.json())
-        .then(function(chefsArray){
-          console.log(chefsArray)
-          //debugger;
+        .then(function(chefsArray) {
           return chefsArray.forEach(function(chef){
             return new Chef(chef)
           })
